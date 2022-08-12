@@ -50,7 +50,7 @@ az acr task create \
     --registry $ACR_NAME \
     --name taskhelloworld \
     --image helloworld:{{.Run.ID}} \
-    --context https://github.com/$GIT_USER/acr-build-helloworld-node.git#main \
+    --context https://github.com/$GIT_USER/acr-build-helloworld-node.git#master \
     --file Dockerfile \
     --git-access-token $GIT_PAT
 ```
@@ -80,7 +80,7 @@ Output from a successful [az acr task create][az-acr-task-create] command is sim
   "step": {
     "arguments": [],
     "baseImageDependencies": null,
-    "contextPath": "https://github.com/gituser/acr-build-helloworld-node#main",
+    "contextPath": "https://github.com/gituser/acr-build-helloworld-node#master",
     "dockerFilePath": "Dockerfile",
     "imageNames": [
       "helloworld:{{.Run.ID}}"
@@ -102,7 +102,7 @@ Output from a successful [az acr task create][az-acr-task-create] command is sim
         "name": "defaultSourceTriggerName",
         "sourceRepository": {
           "branch": "main",
-          "repositoryUrl": "https://github.com/gituser/acr-build-helloworld-node#main",
+          "repositoryUrl": "https://github.com/gituser/acr-build-helloworld-node#master",
           "sourceControlAuthProperties": null,
           "sourceControlType": "GitHub"
         },
